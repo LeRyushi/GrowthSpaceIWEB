@@ -21,6 +21,5 @@ Required assets (place your attached images into `assets/`):
 Usage:
 Open `index.html` in a browser. No server required.
 
-Notes:
-- I matched layout and colours to your screenshots approximately. You can tweak `styles.css`.
-- If you'd like I can inline fonts or add a build (npm) with image optimization.
+
+
