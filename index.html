@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GrowthSpace — where growth begins</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+    <div class="container header-inner">
+      <div style="display:flex;align-items:center;gap:1rem">
+        <div class="logo">GrowthSpace<span class="dot">.</span></div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="feedback.html">Feedback</a>
+      </nav>
+      <div style="margin-left:auto">
+        <a class="btn primary" href="index.html">Back to Homepage</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <span class="tag">High Growth</span>
+          <h1>We <span class="accent">simplify</span> growth<br>in <strong>GrowthSpace</strong>.</h1>
+          <p class="lead">GrowthSpace is a collaborative hub where ideas turn into opportunities through innovation, feedback, and connection.</p>
+          <div class="hero-cta">
+            <button class="btn primary">Get Started</button>
+            <button class="btn outline" onclick="window.location.href='services.html'">Services</button>
+          </div>
+
+          <div class="partners">Our partners
+            <div class="partner-logos">
+              <img src="assets/dribbble.png" alt="dribbble">
+              <img src="assets/yahoo.png" alt="yahoo">
+              <img src="assets/google.png" alt="google">
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-art">
+            <div class="ellipse ellipse-1"></div>
+            <!-- image will be set by script; supports multiple possible filenames in assets/ -->
+            <img data-role="astro-hero" alt="astronaut"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section id="reach" class="reach">
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="brand">
+          <h1 class="logo">GrowthSpace <span class="dot">.</span></h1>
+          <p class="tagline">where <span class="accent">growth</span> begins</p>
+        </div>
+        <div class="contact">
+          <p>Address: City of San Fernando, Pampanga</p>
+          <p>Contact Number: 09656985645</p>
+          <p>Email Address: gspace@gmail.com</p>
+        </div>
+      </div>
+      <div class="footer-ellipse"></div>
+      <div class="footer-bar">©2025, GrowthSpace.inc</div>
+    </footer>
+  </main>
+
+  <script>
+    // trigger entrance animation
+    document.addEventListener('DOMContentLoaded', function(){
+      document.body.classList.add('animate-in');
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

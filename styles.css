@@ -1,0 +1,113 @@
+:root{
+  --accent:#c7861a;
+  --muted:#f5f4f2;
+  --dark:#111;
+  --max-width:1100px;
+}
+*{box-sizing:border-box}
+/* Load Oxygen Mono font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+
+body, * {
+  font-family: 'Oxygen Mono', monospace !important;
+}
+body {margin:0;color:var(--dark);background:#F7F7F7}
+.container{max-width:1200px;margin:0 auto;padding:2rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;color:var(--accent);font-size:1.3rem}
+.nav a{margin-left:1rem;color:#333;text-decoration:none}
+
+.hero{padding:4rem 0}
+.hero-inner{display:flex;gap:2rem;align-items:center}
+.hero-inner{position:relative}
+.hero-left{flex:1}
+.hero-right{flex:1;display:flex;justify-content:center}
+.tag{display:inline-block;background:#f4e6cf;color:var(--accent);padding:.25rem .5rem;border-radius:6px;font-size:.8rem}
+.hero-left h1, h1{font-size:2.4rem;margin:.5rem 0;font-weight:300;line-height:1.05}
+/* accent text uses bold Outfit and the accent color */
+.accent, strong{color:var(--accent);font-weight:700}
+.lead{color:#666;max-width:40rem}
+.btn{padding:.8rem 1.2rem;border-radius:8px;border:2px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}
+.btn.primary{background:var(--accent);color:white}
+.hero-art img{
+  max-width:420px;
+  width:100%;
+  position:relative;
+  z-index:3;
+  transform:translateY(-8px);
+  box-shadow:0 6px 24px 0 rgba(17,17,17,0.10);
+  background:transparent;
+  border-radius:50%;
+}
+
+/* make ellipses appear as rings (transparent center) and align them to the art containers
+   so they look like holes the astronauts step out of */
+.ellipse{position:absolute;border-radius:50%;z-index:1;pointer-events:none;
+  /* ring: transparent center, soft colored outer ring */
+  background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 48%, rgba(198,131,19,0.18) 50%, rgba(198,131,19,0.18) 100%);
+  transform:translate(-50%, -50%);
+}
+.hero-art, .hero-right, .services-art, .reach-right{position:relative;overflow:visible}
+/* center the ellipses relative to their containers; tweak sizes so they sit behind the subject */
+.ellipse-1{width:600px;height:600px;left:50%;top:54%;}
+.ellipse-2{width:560px;height:560px;left:10%;top:40%}
+.ellipse-2b{width:560px;height:560px;left:92%;top:10%}
+.ellipse-3{width:560px;height:560px;left:92%;top:10%}
+
+/* ensure other art images sit above ellipses */
+.services-art img, .reach-right img{position:relative;z-index:2}
+
+.partners{margin-top:1.5rem;font-size:.9rem;color:#888}
+.partner-logos{display:flex;align-items:center;gap:1rem}
+.partner-logos img{height:34px;width:auto;opacity:.95;display:block}
+.partner-logos img[alt="dribbble"] {height:24px;}
+.partner-logos img:first-child{margin-left:0}
+
+.services{background:var(--muted);padding:3rem 0}
+.services-inner{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.services-art img{max-width:420px}
+.services-content .back-home{background:var(--accent);color:#fff;padding:.5rem 1rem;border-radius:8px;text-align:right}
+.btn.primary {text-decoration:none;display:inline-block}
+.kicker{background:#f4e6cf;padding:.3rem .6rem;border-radius:6px;display:inline-block}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.card{background:white;border-radius:12px;padding:1.2rem;border:2px solid #e8d9c0;display:flex;gap:1rem;align-items:center}
+.card img{width:40px}
+
+.reach{padding:3rem 0}
+.reach-inner{display:flex;gap:2rem;align-items:center}
+.reach-right img{max-width:360px}
+
+.feedback{padding:3rem 0}
+.testimonials{display:flex;gap:1rem}
+.testimonial{flex:1;background:white;border:1px solid #e8d9c0;padding:1.5rem;border-radius:10px;opacity:.7}
+.testimonial.active{opacity:1}
+.blockquote{font-style:italic}
+.dots{margin-top:1rem}
+
+.site-footer{background:linear-gradient(180deg,#fff, #f8efe0);padding:2rem 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:2rem}
+.footer-ellipse{position:absolute;left:50%;transform:translateX(-50%);bottom:48px;width:900px;height:300px;border-radius:50%;background:radial-gradient(circle at 50% 30%, rgba(199,130,26,0.16), rgba(199,130,26,0.08) 40%, rgba(199,130,26,0) 70%);pointer-events:none;z-index:0}
+.site-footer{position:relative;overflow:visible}
+.footer-bar{text-align:center;padding:1rem;background:var(--accent);color:#fff}
+
+.site-footer .footer-inner{position:relative;z-index:2}
+.site-footer .brand .logo{font-size:1.6rem;margin:0}
+.site-footer .tagline{margin:0;color:#666}
+
+@media(max-width:900px){
+  .hero-inner,.services-inner,.reach-inner{flex-direction:column}
+  .services-inner{grid-template-columns:1fr}
+  .container{padding:1rem}
+}
+
+/* page entrance animation: fade in while sliding down slightly */
+@keyframes fadeSlideDown {
+  0% {opacity:0; transform:translateY(-18px)}
+  100% {opacity:1; transform:translateY(0)}
+}
+.animate-in * {
+  animation: fadeSlideDown 520ms ease forwards;
+}
+.animate-in * { /* staggered effect */
+  animation-delay: 80ms;
+}
